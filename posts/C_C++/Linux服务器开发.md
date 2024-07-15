@@ -3999,7 +3999,7 @@ void process_pool<T>::run_child() {
     while (!m_stop) {
         num = epoll_wait(m_epoll_fd, events, MAX_EVENT_NUM, -1);
         if (num < 0 && errno != EINTR) {
-            printf("epoll failure, errno:{%s}\n", strerror(errno));
+            printf("epoll failure, errno:{..}\n", strerror(errno));
             break;
         }
         for (int i = 0; i < num; i++) {
